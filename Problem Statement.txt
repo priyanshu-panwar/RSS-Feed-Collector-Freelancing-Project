@@ -1,0 +1,22 @@
+I need a 'simple' python app to be developed to gather rss/atom feeds and store in a db
+
+preferred modules
+- feed parser
+
+Input:
+table (SQL) with rss url feeds
+
+output
+new rss messages (vs previous run) written to database (SQL)
+table meta : per news item: load date , source, message, + json object with all the retrieved data
+(sql db can be sqlite, however later can be a amazon rds postgres instance)
+log table to indicate
+- run through
+- RSS feed issues
+- rss not responding/...
+- parsing issues
+
+errors should be max handled and clean connection open & close
+
+the goal is to run this script every 5-10 min on a was micro instance & needs to run through 1000 RSS feeds easily
+scheduling CRON first then Airflow
