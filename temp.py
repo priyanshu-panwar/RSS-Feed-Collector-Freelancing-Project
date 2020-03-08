@@ -1,3 +1,23 @@
+"""
+
+log = '''CREATE TABLE LOG_TABLE(
+        URL TEXT,
+        DATE_OF_RUN DATETIME,
+        SUCCESS/FAIL TEXT,
+        FAIL_REASON TEXT,
+    )'''
+
+channel title = d.feed.title
+channel url = d.feed.link
+item:
+id = d.entries.id
+title = d.entries.title
+category = d.entries.category
+link = d.entries.link
+description = d.entries.description
+pubdate = d.entries.published
+full json = d.entries
+"""
 import sqlite3
 from sqlite3 import Error
 import feedparser
